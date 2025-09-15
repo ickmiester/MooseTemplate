@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8vbugfvukqgs"]
+[gd_scene load_steps=4 format=3 uid="uid://c8vbugfvukqgs"]
 
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_wfhyj"]
+[ext_resource type="Script" uid="uid://128r6a6ug65k" path="res://scenes/game_over.gd" id="1_wfhyj"]
 [ext_resource type="Texture2D" uid="uid://b3x6c1qmmc7wo" path="res://art/game over.png" id="2_dk1yy"]
+[ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="3_tbwuq"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_wfhyj")
@@ -15,18 +16,18 @@ texture = ExtResource("2_dk1yy")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="RetryButton" type="Button" parent="."]
-offset_left = 287.0
-offset_top = 411.0
-offset_right = 343.0
-offset_bottom = 442.0
+[node name="RetryButton" parent="." instance=ExtResource("3_tbwuq")]
+offset_left = 145.0
+offset_top = 387.0
+offset_right = 284.0
+offset_bottom = 454.0
 text = "RETRY"
 
-[node name="MainMenuButton" type="Button" parent="."]
-offset_left = 400.0
-offset_top = 412.0
-offset_right = 504.0
-offset_bottom = 443.0
+[node name="MainMenuButton" parent="." instance=ExtResource("3_tbwuq")]
+offset_left = 526.0
+offset_top = 394.0
+offset_right = 665.0
+offset_bottom = 461.0
 text = "MAIN MENU"
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

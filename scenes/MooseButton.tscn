@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://k2f2m56ajwsd"]
+
+[ext_resource type="Theme" uid="uid://dyv3ew6070pcc" path="res://themes/MooseButtonTheme.tres" id="1_eny68"]
+[ext_resource type="Script" uid="uid://v14mrhcqoxd2" path="res://scenes/MooseButton.gd" id="1_m3vr7"]
+[ext_resource type="AudioStream" uid="uid://hxgshopagtmt" path="res://audio/buttonTick.wav" id="3_0e3t6"]
+
+[node name="StartButton" type="Button" node_paths=PackedStringArray("ButtonAudio")]
+offset_right = 139.0
+offset_bottom = 67.0
+theme = ExtResource("1_eny68")
+text = "START"
+script = ExtResource("1_m3vr7")
+ButtonAudio = NodePath("AudioStreamPlayer")
+EnterAudio = ExtResource("3_0e3t6")
+ExitAudio = ExtResource("3_0e3t6")
+ClickAudio = ExtResource("3_0e3t6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

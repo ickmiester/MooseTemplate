@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn01my0anig87"]
+[gd_scene load_steps=4 format=3 uid="uid://bn01my0anig87"]
 
-[ext_resource type="Script" path="res://scenes/game_info.gd" id="1_telsd"]
+[ext_resource type="Script" uid="uid://dxuh7m5y6mvo5" path="res://scenes/game_info.gd" id="1_telsd"]
 [ext_resource type="Texture2D" uid="uid://bbfe1bgr8kbhc" path="res://art/game info.png" id="2_r74qy"]
+[ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="3_1ow7r"]
 
 [node name="GameInfo" type="Node2D"]
 script = ExtResource("1_telsd")
@@ -14,18 +15,18 @@ texture = ExtResource("2_r74qy")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="NextButton" type="Button" parent="."]
-offset_left = 366.0
-offset_top = 442.0
-offset_right = 415.0
-offset_bottom = 473.0
+[node name="NextButton" parent="." instance=ExtResource("3_1ow7r")]
+offset_left = 199.0
+offset_top = 413.0
+offset_right = 338.0
+offset_bottom = 480.0
 text = "NEXT"
 
-[node name="BackButton" type="Button" parent="."]
-offset_left = 459.0
-offset_top = 441.0
-offset_right = 509.0
-offset_bottom = 472.0
+[node name="BackButton" parent="." instance=ExtResource("3_1ow7r")]
+offset_left = 595.0
+offset_top = 413.0
+offset_right = 734.0
+offset_bottom = 480.0
 text = "BACK"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

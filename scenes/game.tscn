@@ -1,24 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg64tss28lfvx"]
+[gd_scene load_steps=3 format=3 uid="uid://cg64tss28lfvx"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_ci6ca"]
+[ext_resource type="Script" uid="uid://c7fatcaoii3ms" path="res://scenes/game.gd" id="1_ci6ca"]
+[ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="2_yqjtg"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ci6ca")
 gameOverScene = "res://scenes/game_over.tscn"
 
-[node name="WinButton" type="Button" parent="."]
-offset_left = 229.0
-offset_top = 237.0
-offset_right = 274.0
-offset_bottom = 268.0
-text = "WIN!"
+[node name="WinButton" parent="." instance=ExtResource("2_yqjtg")]
+offset_left = 145.0
+offset_top = 294.0
+offset_right = 284.0
+offset_bottom = 361.0
+text = "WIN
+"
 
-[node name="LoseButton" type="Button" parent="."]
-offset_left = 381.0
-offset_top = 240.0
-offset_right = 433.0
-offset_bottom = 271.0
-text = "LOSE!"
+[node name="LoseButton" parent="." instance=ExtResource("2_yqjtg")]
+offset_left = 353.0
+offset_top = 292.0
+offset_right = 492.0
+offset_bottom = 359.0
+text = "LOSE"
 
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="LoseButton" to="." method="_on_lose_button_pressed"]

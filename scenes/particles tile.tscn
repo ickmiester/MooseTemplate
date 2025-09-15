@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bygv7oi82stjs"]
+
+[ext_resource type="Texture2D" uid="uid://bbfe1bgr8kbhc" path="res://art/game info.png" id="1_yvqvl"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+
+[node name="GameInfo" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -1.66893e-06)
+scale = Vector2(0.04375, 0.0814815)
+texture = ExtResource("1_yvqvl")
