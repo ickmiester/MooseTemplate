@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnt6eb5ga21b2"]
+
+[ext_resource type="Texture2D" uid="uid://b7u8s8cb373rq" path="res://art/rocks.png" id="1_nft56"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6c8j"]
+radius = 128.133
+
+[node name="Obstacle" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nft56")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_m6c8j")

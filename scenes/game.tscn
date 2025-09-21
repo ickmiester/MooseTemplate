@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg64tss28lfvx"]
+[gd_scene load_steps=5 format=3 uid="uid://cg64tss28lfvx"]
 
 [ext_resource type="Script" uid="uid://c7fatcaoii3ms" path="res://scenes/game.gd" id="1_ci6ca"]
 [ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bppvwd6a86q8j" path="res://scenes/TopDownRPG/Player.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cnt6eb5ga21b2" path="res://scenes/TopDownRPG/Obstacle.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ci6ca")
@@ -21,6 +23,16 @@ offset_top = 292.0
 offset_right = 492.0
 offset_bottom = 359.0
 text = "LOSE"
+
+[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("SpawnLocation") instance=ExtResource("3_lnu2h")]
+SpawnLocation = NodePath("../Node2D")
+gameOverScene = ""
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(637, 331)
+
+[node name="Obstacle" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(805, 131)
 
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="LoseButton" to="." method="_on_lose_button_pressed"]
