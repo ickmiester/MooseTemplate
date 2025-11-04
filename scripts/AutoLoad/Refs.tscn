@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfl2w5okk4prt"]
+
+[ext_resource type="Script" uid="uid://c8lasiratwihy" path="res://scripts/AutoLoad/Refs.gd" id="1_ctwdn"]
+
+[node name="Refs" type="Node2D"]
+script = ExtResource("1_ctwdn")
+refsScene = "uid://cfl2w5okk4prt"
+mainMenuScene = "uid://cult5pickc1hw"
+gameScene = "uid://cg64tss28lfvx"
+infoScene = "uid://bn01my0anig87"
+gameOverScene = "uid://c8vbugfvukqgs"
