@@ -27,4 +27,5 @@ func _on_options_button_pressed() -> void:
 
 
 func _on_mute_pressed() -> void:
+	MooseAudio.Mute(!MooseAudio.GlobalMute)
 	pass # Replace with function body.

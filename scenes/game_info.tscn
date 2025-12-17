@@ -6,7 +6,6 @@
 
 [node name="GameInfo" type="Node2D"]
 script = ExtResource("1_telsd")
-MainMenuScene = "res://scenes/main_menu.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
