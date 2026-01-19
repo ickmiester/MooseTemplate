@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxp7b4hj7aukx"]
+
+[ext_resource type="Texture2D" uid="uid://up13elrxdvt7" path="res://art/cutscenebackground.png" id="1_g23k1"]
+[ext_resource type="Script" uid="uid://bputfmi4a7ssh" path="res://scenes/cutscene.gd" id="1_mn5u2"]
+[ext_resource type="Theme" uid="uid://dyv3ew6070pcc" path="res://themes/MooseButtonTheme.tres" id="2_mn5u2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn5u2"]
+size = Vector2(812, 514)
+
+[node name="Cutscene" type="Node2D" node_paths=PackedStringArray("CurrentText")]
+script = ExtResource("1_mn5u2")
+TextList = Array[String](["He was dead", "but somehow...", "He returned!"])
+CurrentText = NodePath("CurrentText")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_g23k1")
+
+[node name="CurrentText" type="Label" parent="."]
+offset_left = -346.0
+offset_top = -8.0
+offset_right = 345.0
+offset_bottom = 71.0
+theme = ExtResource("2_mn5u2")
+text = "Somehow he returned..."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Tooltip" type="Label" parent="."]
+offset_left = 236.0
+offset_top = 225.0
+offset_right = 367.0
+offset_bottom = 248.0
+theme = ExtResource("2_mn5u2")
+text = "Click to Skip..."
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mn5u2")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

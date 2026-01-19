@@ -15,6 +15,7 @@ offset_right = 284.0
 offset_bottom = 361.0
 text = "WIN
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="LoseButton" parent="." instance=ExtResource("2_yqjtg")]
 offset_left = 353.0
@@ -22,6 +23,7 @@ offset_top = 292.0
 offset_right = 492.0
 offset_bottom = 359.0
 text = "LOSE"
+metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" parent="." node_paths=PackedStringArray("SpawnLocation") instance=ExtResource("3_lnu2h")]
 SpawnLocation = NodePath("../Node2D")
