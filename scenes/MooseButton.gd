@@ -9,6 +9,7 @@ class_name MooseButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pivot_offset = Vector2(size.x/2, size.y/2)
 	pass # Replace with function body.
 
 
@@ -23,6 +24,11 @@ func _on_mouse_entered() -> void:
 		#ButtonAudio.stream = EnterAudio
 		#ButtonAudio.play()
 		MooseAudio.PlaySound(EnterAudio)
+	var tween:Tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.1, 1.1), .1)
+	tween.tween_property(self, "scale", Vector2.ONE, 0)
+	tween.tween_property(self, "rotation_degrees", 5 * (100/size.x), .05)
+	tween.tween_property(self, "rotation_degrees", 0, 0)
 	pass # Replace with function body.
 
 

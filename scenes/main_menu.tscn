@@ -32,13 +32,15 @@ offset_bottom = 416.0
 text = "QUIT"
 
 [node name="InfoButton" parent="." instance=ExtResource("3_bqqt6")]
+anchors_preset = -1
 offset_left = 559.0
 offset_top = 351.0
-offset_right = 869.0
+offset_right = 690.0
 offset_bottom = 418.0
 text = "HOW TO PLAY"
 
 [node name="OptionsButton" parent="." instance=ExtResource("3_bqqt6")]
+anchors_preset = -1
 offset_left = 241.0
 offset_top = 443.0
 offset_right = 380.0

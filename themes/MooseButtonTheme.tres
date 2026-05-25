@@ -1,36 +1,52 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://dyv3ew6070pcc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8fxh"]
-bg_color = Color(0.832952, 0.503226, 0.361996, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 5
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 5
+bg_color = Color(0.5254472, 0.57546914, 0.6911787, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38pda"]
-bg_color = Color(0.345098, 0.501961, 0.8, 1)
+bg_color = Color(0.27700084, 0.40716535, 0.6544779, 1)
 border_width_left = 3
 border_width_top = 3
-border_color = Color(0.384314, 0.670588, 0.831373, 1)
+border_color = Color(0.2463957, 0.39271194, 0.6748286, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 expand_margin_right = 3.0
 shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ne5c"]
-bg_color = Color(0.25098, 0.211765, 0.623529, 1)
+bg_color = Color(0.21427935, 0.31985325, 0.5204435, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hacea"]
 bg_color = Color(0.384314, 0.670588, 0.831373, 1)
 border_width_left = 5
 border_width_top = 4
 border_color = Color(0.345098, 0.501961, 0.8, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 expand_margin_right = 5.0
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hea0a"]
-bg_color = Color(0.345098, 0.501961, 0.8, 1)
+bg_color = Color(0.20197064, 0.3027188, 0.49414015, 1)
 border_width_left = 3
 border_width_top = 3
 border_color = Color(0.25098, 0.211765, 0.623529, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 expand_margin_right = 3.0
 shadow_size = 3
 
@@ -38,9 +54,9 @@ shadow_size = 3
 Button/colors/font_color = Color(0.25098, 0.211765, 0.623529, 1)
 Button/colors/font_disabled_color = Color(0.20033, 0.20033, 0.20033, 0.5)
 Button/colors/font_focus_color = Color(0.25098, 0.211765, 0.623529, 1)
-Button/colors/font_hover_color = Color(0.25098, 0.211765, 0.623529, 1)
-Button/colors/font_hover_pressed_color = Color(0.145098, 0.0745098, 0.101961, 1)
-Button/colors/font_pressed_color = Color(0.501961, 0.160784, 0.329412, 1)
+Button/colors/font_hover_color = Color(0.2509804, 0.21176471, 0.62352943, 1)
+Button/colors/font_hover_pressed_color = Color(0.2509804, 0.21176471, 0.62352943, 1)
+Button/colors/font_pressed_color = Color(0.021744415, 0.015010631, 0.11042989, 1)
 Button/constants/outline_size = 2
 Button/font_sizes/font_size = 45
 Button/styles/disabled = SubResource("StyleBoxFlat_v8fxh")
