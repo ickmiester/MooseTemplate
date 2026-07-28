@@ -27,7 +27,7 @@ func _on_mouse_entered() -> void:
 	var tween:Tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.1, 1.1), .1)
 	tween.tween_property(self, "scale", Vector2.ONE, 0)
-	tween.tween_property(self, "rotation_degrees", 5 * (100/size.x), .05)
+	tween.tween_property(self, "rotation_degrees", 5 * (100/(size.x*2)), .05)
 	tween.tween_property(self, "rotation_degrees", 0, 0)
 	pass # Replace with function body.
 
