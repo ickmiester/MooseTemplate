@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgdpmnyoeiob2"]
+
+[ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="1_4o336"]
+[ext_resource type="Script" uid="uid://b1jgfnof7tlpt" path="res://scenes/chat.gd" id="1_paia3"]
+[ext_resource type="Script" uid="uid://dpiyu3ifurugr" path="res://scenes/chat_history.gd" id="2_sbgww"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sbgww"]
+properties/0/path = NodePath("ChatHistory:text")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="Chat" type="Node2D" node_paths=PackedStringArray("ChatHistory", "ConnectedToLabel", "ConnectedAsLabel", "textInput")]
+script = ExtResource("1_paia3")
+ChatHistory = NodePath("ChatHistory")
+ConnectedToLabel = NodePath("ConnectedTo")
+ConnectedAsLabel = NodePath("ConnectedAs")
+textInput = NodePath("Input")
+
+[node name="ConnectedAs" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 44.0
+offset_right = 146.0
+offset_bottom = 67.0
+text = "Connected As: "
+
+[node name="ConnectedTo" type="Label" parent="."]
+offset_left = 611.0
+offset_top = 48.0
+offset_right = 726.0
+offset_bottom = 71.0
+text = "Connected To: "
+
+[node name="ChatHistory" type="TextEdit" parent="."]
+offset_left = 2.0
+offset_top = 88.0
+offset_right = 959.0
+offset_bottom = 355.0
+text = "Welcome to MooseChat!"
+placeholder_text = "User1:  blah
+User2: blah"
+editable = false
+wrap_mode = 1
+script = ExtResource("2_sbgww")
+
+[node name="Input" type="LineEdit" parent="."]
+offset_left = 3.0
+offset_top = 410.0
+offset_right = 867.0
+offset_bottom = 451.0
+placeholder_text = "enter text..."
+
+[node name="SendButton" parent="." instance=ExtResource("1_4o336")]
+offset_left = 705.0
+offset_top = 461.0
+offset_right = 844.0
+offset_bottom = 528.0
+focus_mode = 0
+text = "Send"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_sbgww")
+
+[connection signal="pressed" from="SendButton" to="." method="_on_send_button_pressed"]

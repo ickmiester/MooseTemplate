@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cult5pickc1hw"]
+[gd_scene load_steps=5 format=3 uid="uid://cult5pickc1hw"]
 
 [ext_resource type="Script" uid="uid://csvhywhk8g8lh" path="res://scenes/main_menu.gd" id="1_hb7w4"]
 [ext_resource type="Texture2D" uid="uid://jocfv8j21a55" path="res://art/main menu.png" id="2_tm74w"]
 [ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="3_bqqt6"]
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+
+[node name="MainMenu" type="Node2D" node_paths=PackedStringArray("HostName", "HostPort", "JoinName", "JoinPort", "JoinIP")]
 script = ExtResource("1_hb7w4")
+HostName = NodePath("HostPopup/NameEdit")
+HostPort = NodePath("HostPopup/PortEdit")
+JoinName = NodePath("JoinPopup/NameEdit")
+JoinPort = NodePath("JoinPopup/PortEdit")
+JoinIP = NodePath("JoinPopup/IPEdit")
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -53,8 +60,146 @@ offset_bottom = 509.0
 text = "MUTE
 "
 
+[node name="HostButton" parent="." instance=ExtResource("3_bqqt6")]
+offset_left = 163.0
+offset_top = 238.0
+offset_right = 302.0
+offset_bottom = 305.0
+text = "Host Chat"
+
+[node name="JoinButton" parent="." instance=ExtResource("3_bqqt6")]
+offset_left = 422.0
+offset_top = 239.0
+offset_right = 561.0
+offset_bottom = 306.0
+text = "Join Chat"
+
+[node name="HostPopup" type="Popup" parent="."]
+oversampling_override = 1.0
+title = "Host"
+initial_position = 2
+size = Vector2i(300, 300)
+always_on_top = true
+
+[node name="StartButton" parent="HostPopup" instance=ExtResource("3_bqqt6")]
+offset_left = -157.0
+offset_top = 70.0
+offset_right = 55.0
+offset_bottom = 137.0
+scale = Vector2(0.54155344, 0.8110085)
+text = "StartChat"
+
+[node name="CancelButton" parent="HostPopup" instance=ExtResource("3_bqqt6")]
+offset_left = 0.0
+offset_top = 72.0
+offset_right = 149.0
+offset_bottom = 139.0
+scale = Vector2(0.62895656, 0.76701874)
+text = "Cancel"
+
+[node name="NameLabel" type="Label" parent="HostPopup"]
+offset_left = 57.0
+offset_top = 10.0
+offset_right = 97.0
+offset_bottom = 33.0
+text = "Name"
+label_settings = SubResource("LabelSettings_bqqt6")
+
+[node name="PortLabel" type="Label" parent="HostPopup"]
+offset_left = 58.0
+offset_top = 95.0
+offset_right = 98.0
+offset_bottom = 118.0
+text = "Port"
+
+[node name="NameEdit" type="LineEdit" parent="HostPopup"]
+offset_left = 59.0
+offset_top = 43.0
+offset_right = 223.0
+offset_bottom = 79.0
+placeholder_text = "enter name..."
+
+[node name="PortEdit" type="LineEdit" parent="HostPopup"]
+offset_left = 65.0
+offset_top = 142.0
+offset_right = 224.0
+offset_bottom = 175.0
+text = "9955"
+
+[node name="JoinPopup" type="Popup" parent="."]
+oversampling_override = 1.0
+title = "Join"
+initial_position = 2
+size = Vector2i(302, 300)
+always_on_top = true
+
+[node name="ConnectButton" parent="JoinPopup" instance=ExtResource("3_bqqt6")]
+offset_left = -148.0
+offset_top = 72.0
+offset_right = 36.0
+offset_bottom = 139.0
+scale = Vector2(0.6270331, 0.89330417)
+text = "Connect"
+
+[node name="CancelButton" parent="JoinPopup" instance=ExtResource("3_bqqt6")]
+offset_left = -5.0
+offset_top = 72.0
+offset_right = 144.0
+offset_bottom = 139.0
+scale = Vector2(0.8150393, 0.8140082)
+text = "Cancel"
+
+[node name="NameLabel" type="Label" parent="JoinPopup"]
+offset_left = 57.0
+offset_top = 10.0
+offset_right = 97.0
+offset_bottom = 33.0
+text = "Name"
+label_settings = SubResource("LabelSettings_bqqt6")
+
+[node name="PortLabel" type="Label" parent="JoinPopup"]
+offset_left = 56.0
+offset_top = 174.0
+offset_right = 96.0
+offset_bottom = 197.0
+text = "Port"
+
+[node name="NameEdit" type="LineEdit" parent="JoinPopup"]
+offset_left = 59.0
+offset_top = 43.0
+offset_right = 223.0
+offset_bottom = 79.0
+placeholder_text = "enter name..."
+
+[node name="PortEdit" type="LineEdit" parent="JoinPopup"]
+offset_left = 114.0
+offset_top = 172.0
+offset_right = 273.0
+offset_bottom = 205.0
+text = "9955"
+
+[node name="IPEdit" type="LineEdit" parent="JoinPopup"]
+offset_left = 115.0
+offset_top = 119.0
+offset_right = 272.0
+offset_bottom = 151.0
+text = "127.0.0.1"
+
+[node name="IPLabel" type="Label" parent="JoinPopup"]
+offset_left = 19.0
+offset_top = 125.0
+offset_right = 101.0
+offset_bottom = 148.0
+text = "IP Address"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MuteButton" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="HostPopup/StartButton" to="." method="_on_startChat_button_pressed"]
+[connection signal="pressed" from="HostPopup/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="JoinPopup/ConnectButton" to="." method="_on_connect_button_pressed"]
+[connection signal="pressed" from="JoinPopup/CancelButton" to="." method="_on_cancel_button_pressed"]

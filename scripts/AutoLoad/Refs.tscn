@@ -7,5 +7,6 @@ script = ExtResource("1_ctwdn")
 refsScene = "uid://cfl2w5okk4prt"
 mainMenuScene = "uid://cult5pickc1hw"
 gameScene = "uid://cg64tss28lfvx"
+chatScene = "uid://bgdpmnyoeiob2"
 infoScene = "uid://bn01my0anig87"
 gameOverScene = "uid://c8vbugfvukqgs"
