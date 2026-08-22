@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cult5pickc1hw"]
+[gd_scene format=3 uid="uid://cult5pickc1hw"]
 
 [ext_resource type="Script" uid="uid://csvhywhk8g8lh" path="res://scenes/main_menu.gd" id="1_hb7w4"]
 [ext_resource type="Texture2D" uid="uid://jocfv8j21a55" path="res://art/main menu.png" id="2_tm74w"]
@@ -6,15 +6,17 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
 
-[node name="MainMenu" type="Node2D" node_paths=PackedStringArray("HostName", "HostPort", "JoinName", "JoinPort", "JoinIP")]
+[node name="MainMenu" type="Node2D" unique_id=498046298 node_paths=PackedStringArray("HostName", "HostPort", "JoinName", "JoinPort", "JoinIP", "HostPopup", "JoinPopup")]
 script = ExtResource("1_hb7w4")
 HostName = NodePath("HostPopup/NameEdit")
 HostPort = NodePath("HostPopup/PortEdit")
 JoinName = NodePath("JoinPopup/NameEdit")
 JoinPort = NodePath("JoinPopup/PortEdit")
 JoinIP = NodePath("JoinPopup/IPEdit")
+HostPopup = NodePath("HostPopup")
+JoinPopup = NodePath("JoinPopup")
 
-[node name="BackgroundImage" type="TextureRect" parent="."]
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=152348288]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,34 +27,34 @@ grow_vertical = 2
 texture = ExtResource("2_tm74w")
 expand_mode = 3
 
-[node name="StartButton" parent="." instance=ExtResource("3_bqqt6")]
+[node name="StartButton" parent="." unique_id=514273446 instance=ExtResource("3_bqqt6")]
 offset_left = 78.0
 offset_top = 356.0
 offset_right = 217.0
 offset_bottom = 423.0
 
-[node name="Quit" parent="." instance=ExtResource("3_bqqt6")]
+[node name="Quit" parent="." unique_id=911441617 instance=ExtResource("3_bqqt6")]
 offset_left = 299.0
 offset_top = 349.0
 offset_right = 438.0
 offset_bottom = 416.0
 text = "QUIT"
 
-[node name="InfoButton" parent="." instance=ExtResource("3_bqqt6")]
+[node name="InfoButton" parent="." unique_id=1347519065 instance=ExtResource("3_bqqt6")]
 offset_left = 559.0
 offset_top = 351.0
 offset_right = 690.0
 offset_bottom = 418.0
 text = "HOW TO PLAY"
 
-[node name="OptionsButton" parent="." instance=ExtResource("3_bqqt6")]
+[node name="OptionsButton" parent="." unique_id=2069605713 instance=ExtResource("3_bqqt6")]
 offset_left = 241.0
 offset_top = 443.0
 offset_right = 380.0
 offset_bottom = 510.0
 text = "OPTIONS"
 
-[node name="MuteButton" parent="." instance=ExtResource("3_bqqt6")]
+[node name="MuteButton" parent="." unique_id=1274071331 instance=ExtResource("3_bqqt6")]
 offset_left = 512.0
 offset_top = 442.0
 offset_right = 651.0
@@ -60,28 +62,28 @@ offset_bottom = 509.0
 text = "MUTE
 "
 
-[node name="HostButton" parent="." instance=ExtResource("3_bqqt6")]
+[node name="HostButton" parent="." unique_id=2107635244 instance=ExtResource("3_bqqt6")]
 offset_left = 163.0
 offset_top = 238.0
 offset_right = 302.0
 offset_bottom = 305.0
 text = "Host Chat"
 
-[node name="JoinButton" parent="." instance=ExtResource("3_bqqt6")]
+[node name="JoinButton" parent="." unique_id=198293604 instance=ExtResource("3_bqqt6")]
 offset_left = 422.0
 offset_top = 239.0
 offset_right = 561.0
 offset_bottom = 306.0
 text = "Join Chat"
 
-[node name="HostPopup" type="Popup" parent="."]
+[node name="HostPopup" type="Popup" parent="." unique_id=1498587987]
 oversampling_override = 1.0
 title = "Host"
 initial_position = 2
 size = Vector2i(300, 300)
 always_on_top = true
 
-[node name="StartButton" parent="HostPopup" instance=ExtResource("3_bqqt6")]
+[node name="StartButton" parent="HostPopup" unique_id=211498279 instance=ExtResource("3_bqqt6")]
 offset_left = -157.0
 offset_top = 70.0
 offset_right = 55.0
@@ -89,7 +91,7 @@ offset_bottom = 137.0
 scale = Vector2(0.54155344, 0.8110085)
 text = "StartChat"
 
-[node name="CancelButton" parent="HostPopup" instance=ExtResource("3_bqqt6")]
+[node name="CancelButton" parent="HostPopup" unique_id=942959695 instance=ExtResource("3_bqqt6")]
 offset_left = 0.0
 offset_top = 72.0
 offset_right = 149.0
@@ -97,7 +99,7 @@ offset_bottom = 139.0
 scale = Vector2(0.62895656, 0.76701874)
 text = "Cancel"
 
-[node name="NameLabel" type="Label" parent="HostPopup"]
+[node name="NameLabel" type="Label" parent="HostPopup" unique_id=1763758941]
 offset_left = 57.0
 offset_top = 10.0
 offset_right = 97.0
@@ -105,35 +107,35 @@ offset_bottom = 33.0
 text = "Name"
 label_settings = SubResource("LabelSettings_bqqt6")
 
-[node name="PortLabel" type="Label" parent="HostPopup"]
+[node name="PortLabel" type="Label" parent="HostPopup" unique_id=806877462]
 offset_left = 58.0
 offset_top = 95.0
 offset_right = 98.0
 offset_bottom = 118.0
 text = "Port"
 
-[node name="NameEdit" type="LineEdit" parent="HostPopup"]
+[node name="NameEdit" type="LineEdit" parent="HostPopup" unique_id=158956967]
 offset_left = 59.0
 offset_top = 43.0
 offset_right = 223.0
 offset_bottom = 79.0
 placeholder_text = "enter name..."
 
-[node name="PortEdit" type="LineEdit" parent="HostPopup"]
+[node name="PortEdit" type="LineEdit" parent="HostPopup" unique_id=1719825417]
 offset_left = 65.0
 offset_top = 142.0
 offset_right = 224.0
 offset_bottom = 175.0
 text = "9955"
 
-[node name="JoinPopup" type="Popup" parent="."]
+[node name="JoinPopup" type="Popup" parent="." unique_id=1358111440]
 oversampling_override = 1.0
 title = "Join"
 initial_position = 2
 size = Vector2i(302, 300)
 always_on_top = true
 
-[node name="ConnectButton" parent="JoinPopup" instance=ExtResource("3_bqqt6")]
+[node name="ConnectButton" parent="JoinPopup" unique_id=654047816 instance=ExtResource("3_bqqt6")]
 offset_left = -148.0
 offset_top = 72.0
 offset_right = 36.0
@@ -141,7 +143,7 @@ offset_bottom = 139.0
 scale = Vector2(0.6270331, 0.89330417)
 text = "Connect"
 
-[node name="CancelButton" parent="JoinPopup" instance=ExtResource("3_bqqt6")]
+[node name="CancelButton" parent="JoinPopup" unique_id=426094469 instance=ExtResource("3_bqqt6")]
 offset_left = -5.0
 offset_top = 72.0
 offset_right = 144.0
@@ -149,7 +151,7 @@ offset_bottom = 139.0
 scale = Vector2(0.8150393, 0.8140082)
 text = "Cancel"
 
-[node name="NameLabel" type="Label" parent="JoinPopup"]
+[node name="NameLabel" type="Label" parent="JoinPopup" unique_id=1084105254]
 offset_left = 57.0
 offset_top = 10.0
 offset_right = 97.0
@@ -157,35 +159,35 @@ offset_bottom = 33.0
 text = "Name"
 label_settings = SubResource("LabelSettings_bqqt6")
 
-[node name="PortLabel" type="Label" parent="JoinPopup"]
+[node name="PortLabel" type="Label" parent="JoinPopup" unique_id=14022452]
 offset_left = 56.0
 offset_top = 174.0
 offset_right = 96.0
 offset_bottom = 197.0
 text = "Port"
 
-[node name="NameEdit" type="LineEdit" parent="JoinPopup"]
+[node name="NameEdit" type="LineEdit" parent="JoinPopup" unique_id=1501483298]
 offset_left = 59.0
 offset_top = 43.0
 offset_right = 223.0
 offset_bottom = 79.0
 placeholder_text = "enter name..."
 
-[node name="PortEdit" type="LineEdit" parent="JoinPopup"]
+[node name="PortEdit" type="LineEdit" parent="JoinPopup" unique_id=1762712000]
 offset_left = 114.0
 offset_top = 172.0
 offset_right = 273.0
 offset_bottom = 205.0
 text = "9955"
 
-[node name="IPEdit" type="LineEdit" parent="JoinPopup"]
+[node name="IPEdit" type="LineEdit" parent="JoinPopup" unique_id=2041388478]
 offset_left = 115.0
 offset_top = 119.0
 offset_right = 272.0
 offset_bottom = 151.0
 text = "127.0.0.1"
 
-[node name="IPLabel" type="Label" parent="JoinPopup"]
+[node name="IPLabel" type="Label" parent="JoinPopup" unique_id=1331946488]
 offset_left = 19.0
 offset_top = 125.0
 offset_right = 101.0

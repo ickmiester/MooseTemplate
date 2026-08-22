@@ -4,6 +4,9 @@ extends Node2D
 @export var JoinName:LineEdit
 @export var JoinPort:LineEdit
 @export var JoinIP:LineEdit
+@export var HostPopup:Popup
+@export var JoinPopup:Popup
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var chatterNum = Global.Random.randi_range(1, 999)
@@ -33,24 +36,24 @@ func _on_mute_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_host_button_pressed() -> void:
-	$HostPopup.show()
+	HostPopup.show()
 	pass # Replace with function body.
 
 func _on_join_button_pressed() -> void:
-	$JoinPopup.show()
+	JoinPopup.show()
 	pass # Replace with function body.
 
 func _on_startChat_button_pressed() -> void:
 	Global.hostMultiplayer(HostName.text, HostPort.text)
-	$HostPopup.hide()
+	HostPopup.hide()
 	pass # Replace with function body.
 
 func _on_cancel_button_pressed() -> void:
-	$HostPopup.hide()
-	$JoinPopup.hide()
+	HostPopup.hide()
+	JoinPopup.hide()
 	pass # Replace with function body.
 
 func _on_connect_button_pressed() -> void:
 	Global.joinMultiplayer(JoinName.text, JoinPort.text, JoinIP.text)
-	$JoinPopup.hide()
+	JoinPopup.hide()
 	pass # Replace with function body.

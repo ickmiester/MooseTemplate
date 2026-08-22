@@ -3,8 +3,14 @@
 [ext_resource type="Script" uid="uid://cacvkhnh75ygj" path="res://scenes/game_options.gd" id="1_2lhe5"]
 [ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="3_1ow7r"]
 
-[node name="GameOptions" type="Node2D" unique_id=1175619213]
+[node name="GameOptions" type="Node2D" unique_id=1175619213 node_paths=PackedStringArray("MusicSlider", "VolumeSlider", "SFXSlider", "TimeSlider", "TimeText", "MuteButton")]
 script = ExtResource("1_2lhe5")
+MusicSlider = NodePath("MusicSlider")
+VolumeSlider = NodePath("VolumeSlider")
+SFXSlider = NodePath("SFXSlider")
+TimeSlider = NodePath("TimeSlider")
+TimeText = NodePath("TimeSlider/TimeNumber")
+MuteButton = NodePath("MuteButton")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=685644305]
 offset_left = 144.0
