@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://c7dqqnjvsymxo"]
+
+[ext_resource type="Script" uid="uid://cacvkhnh75ygj" path="res://scenes/game_options.gd" id="1_2lhe5"]
+[ext_resource type="PackedScene" uid="uid://k2f2m56ajwsd" path="res://scenes/MooseButton.tscn" id="3_1ow7r"]
+
+[node name="GameOptions" type="Node2D" unique_id=1175619213]
+script = ExtResource("1_2lhe5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=685644305]
+offset_left = 144.0
+offset_top = 8.0
+offset_right = 872.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/shadow_outline_size = 15
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 122
+text = "Options:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="NextButton" parent="." unique_id=1969652404 instance=ExtResource("3_1ow7r")]
+visible = false
+offset_left = 256.0
+offset_top = 704.0
+offset_right = 395.0
+offset_bottom = 771.0
+theme = null
+text = "NEXT"
+
+[node name="BackButton" parent="." unique_id=879970091 instance=ExtResource("3_1ow7r")]
+offset_left = 43.0
+offset_top = 40.0
+offset_right = 182.0
+offset_bottom = 107.0
+theme = null
+text = "BACK"
+
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=121360697]
+offset_left = 496.0
+offset_top = 160.0
+offset_right = 656.0
+offset_bottom = 208.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+ticks_on_borders = true
+
+[node name="SliderLabel" type="RichTextLabel" parent="VolumeSlider" unique_id=283770366]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 60.0
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Volume:"
+fit_content = true
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=349847820]
+offset_left = 496.0
+offset_top = 224.0
+offset_right = 656.0
+offset_bottom = 272.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+ticks_on_borders = true
+
+[node name="SliderLabel" type="RichTextLabel" parent="MusicSlider" unique_id=1853158107]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 60.0
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Music:"
+fit_content = true
+
+[node name="SFXSlider" type="HSlider" parent="." unique_id=1685695372]
+offset_left = 496.0
+offset_top = 280.0
+offset_right = 656.0
+offset_bottom = 328.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+ticks_on_borders = true
+
+[node name="SliderLabel" type="RichTextLabel" parent="SFXSlider" unique_id=401023382]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 60.0
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "SFX:"
+fit_content = true
+
+[node name="MuteButton" type="CheckButton" parent="." unique_id=1981695166]
+offset_left = 488.0
+offset_top = 344.0
+offset_right = 532.0
+offset_bottom = 376.0
+scale = Vector2(1.5, 1.5)
+
+[node name="ButtonLabel" type="RichTextLabel" parent="MuteButton" unique_id=1715718752]
+layout_mode = 0
+offset_left = -112.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 52.0
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Mute:"
+fit_content = true
+
+[node name="TimeSlider" type="HSlider" parent="." unique_id=815061956]
+offset_left = 496.0
+offset_top = 392.0
+offset_right = 656.0
+offset_bottom = 440.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 3
+size_flags_vertical = 2
+min_value = 30.0
+max_value = 180.0
+step = 15.0
+value = 60.0
+ticks_on_borders = true
+
+[node name="SliderLabel" type="RichTextLabel" parent="TimeSlider" unique_id=631783896]
+layout_mode = 0
+offset_left = -194.0
+offset_top = -2.666667
+offset_right = 2.0
+offset_bottom = 95.333336
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Level Timer:"
+fit_content = true
+
+[node name="TimeNumber" type="RichTextLabel" parent="TimeSlider" unique_id=1508842208]
+layout_mode = 0
+offset_top = 42.666668
+offset_right = 304.0
+offset_bottom = 83.66667
+theme_override_colors/default_color = Color(0.7411765, 0.84313726, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.2702219, 0)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 35
+fit_content = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
+[connection signal="value_changed" from="TimeSlider" to="." method="_on_time_slider_value_changed"]

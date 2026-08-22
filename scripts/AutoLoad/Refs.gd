@@ -5,6 +5,7 @@ extends Node2D
 @export_file("*.tscn") var chatScene: String
 @export_file("*.tscn") var infoScene: String
 @export_file("*.tscn") var gameOverScene: String
+@export_file("*.tscn") var optionsScene: String
 
 func _ready() -> void:
 	print("Refs got Readied!")
@@ -22,4 +23,6 @@ func GetScene(sceneName:Enums.Scenes) -> String:
 		return mainMenuScene;
 	if(sceneName == Enums.Scenes.Chat):
 		return chatScene;
+	if(sceneName == Enums.Scenes.Options):
+		return optionsScene;
 	return mainMenuScene;

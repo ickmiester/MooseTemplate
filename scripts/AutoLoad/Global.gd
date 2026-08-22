@@ -4,6 +4,8 @@ var MultiplayerName:String = ""
 var HostIP:String = ""
 var HostPort:String = ""
 var ReadyQuit:bool = false
+#the time set for the level in the options screen
+var LevelTime:float = 60.0
 
 var Random = RandomNumberGenerator.new()
 

@@ -25,6 +25,7 @@ func _on_info_button_pressed() -> void:
 	Global.LoadScene(Enums.Scenes.Info)
 
 func _on_options_button_pressed() -> void:
+	Global.LoadScene(Enums.Scenes.Options)
 	pass # Replace with function body.
 
 func _on_mute_pressed() -> void:

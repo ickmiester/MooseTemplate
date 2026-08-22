@@ -1,3 +1,3 @@
 extends Node
 
-enum Scenes{Refs, Info, MainMenu, GameOver, Game, Chat}
+enum Scenes{Refs, Info, MainMenu, GameOver, Game, Chat, Options}

@@ -44,3 +44,9 @@ func PlayMusic(sound:AudioStream) -> void:
 	MusicPlayer.stream = sound
 	MusicPlayer.volume_linear = MasterVolume * MusicVolume * MuteMultiple
 	MusicPlayer.play()
+
+
+func UpdateVolume() -> void:
+	MusicPlayer.volume_linear = MasterVolume * MusicVolume * MuteMultiple
+	for player in SFXPlayers:
+		player.volume_linear = MasterVolume * SoundVolume * MuteMultiple
