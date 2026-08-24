@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bptbo52bsp56q"]
+
+[ext_resource type="Shader" uid="uid://0r78y0p7p3mc" path="res://scenes/outlineAndGlow.gdshader" id="1_4fm6h"]
+
+[resource]
+shader = ExtResource("1_4fm6h")
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/glow_power = 0.0
+shader_parameter/glow_shift = 0.0
+shader_parameter/glow_radius = 5.0
+shader_parameter/progress = 1.0
